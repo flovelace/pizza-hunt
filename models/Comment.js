@@ -54,11 +54,7 @@ const CommentSchema = new Schema({
 CommentSchema.virtual('replyCount').get(function() {
   return this.replies.length;
 },
-{
-  toJSON: {
-    virtuals: true
-  }
-});
+);
 
 const Comment = model('Comment', CommentSchema);
 
